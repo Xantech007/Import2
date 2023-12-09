@@ -11,9 +11,9 @@
                                 <div class="nk-block-head-sub"><span>Welcome!</span></div>
                                 <div class="align-center flex-wrap pb-2 gx-4 gy-3">
                                     <div>
-                                        <h2 class="nk-block-title fw-normal">Abu Bin Ishtiyak</h2>
+                                        <h2 class="nk-block-title fw-normal text-capitalize">{{ Auth::user()->name }}</h2>
                                     </div>
-                                    <div><a href="html/invest/schemes.html" class="btn btn-white btn-light">My
+                                    <div><a href="{{ route('customer.myplan.index') }}" class="btn btn-white btn-light">My
                                             Plans <em class="icon ni ni-arrow-long-right ms-2"></em></a></div>
                                 </div>
                                 <div class="nk-block-des">
@@ -23,45 +23,25 @@
                             <div class="nk-block-head-content d-none d-md-block">
                                 <div class="nk-slider nk-slider-s1">
                                     <div class="slider-init" data-slick='{"dots": true, "arrows": false, "fade": true}'>
-                                        <div class="slider-item">
-                                            <div class="nk-iv-wg1">
-                                                <div class="nk-iv-wg1-sub sub-text">My Active Plans</div>
-                                                <h6 class="nk-iv-wg1-info title">Silver - 4.76% for 21 Days</h6>
-                                                <a href="#" class="nk-iv-wg1-link link link-light"><em
-                                                        class="icon ni ni-trend-up"></em> <span>Check
-                                                        Details</span></a>
-                                                <div class="nk-iv-wg1-progress">
-                                                    <div class="progress-bar bg-primary" data-progress="80">
+                                        @foreach ($plan as $p)
+                                            <div class="slider-item">
+                                                <div class="nk-iv-wg1">
+                                                    <div class="nk-iv-wg1-sub sub-text">My Active Plans</div>
+                                                    <h6 class="nk-iv-wg1-info title">{{ Str::ucfirst($p->plan_name) }} - $
+                                                        {{ number_format($p->daily_profit, 2) }} for {{ $p->tenure }}
+                                                        Days</h6>
+                                                    <a href="{{ route('customer.myplan.detail', $p->id) }}"
+                                                        class="nk-iv-wg1-link link link-light"><em
+                                                            class="icon ni ni-trend-up"></em> <span>Check
+                                                            Details</span></a>
+                                                    <div class="nk-iv-wg1-progress">
+                                                        <div class="progress-bar bg-primary"
+                                                            data-progress="{{ ($p->profit_earned / $p->total_return) * 100 }}">
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div><!-- .slider-item -->
-                                        <div class="slider-item">
-                                            <div class="nk-iv-wg1">
-                                                <div class="nk-iv-wg1-sub sub-text">My Active Plans</div>
-                                                <h6 class="nk-iv-wg1-info title">Silver - 4.76% for 21 Days</h6>
-                                                <a href="#" class="nk-iv-wg1-link link link-light"><em
-                                                        class="icon ni ni-trend-up"></em> <span>Check
-                                                        Details</span></a>
-                                                <div class="nk-iv-wg1-progress">
-                                                    <div class="progress-bar bg-primary" data-progress="80">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- .slider-item -->
-                                        <div class="slider-item">
-                                            <div class="nk-iv-wg1">
-                                                <div class="nk-iv-wg1-sub sub-text">My Active Plans</div>
-                                                <h6 class="nk-iv-wg1-info title">Silver - 4.76% for 21 Days</h6>
-                                                <a href="#" class="nk-iv-wg1-link link link-light"><em
-                                                        class="icon ni ni-trend-up"></em> <span>Check
-                                                        Details</span></a>
-                                                <div class="nk-iv-wg1-progress">
-                                                    <div class="progress-bar bg-primary" data-progress="80">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- .slider-item -->
+                                            </div><!-- .slider-item -->
+                                        @endforeach
                                     </div>
                                     <div class="slider-dots"></div>
                                 </div><!-- .nk-slider -->
@@ -69,67 +49,17 @@
                         </div><!-- .nk-block-between -->
                     </div><!-- .nk-block-head -->
                     <div class="nk-block">
-                        <div class="nk-news card card-bordered">
-                            <div class="card-inner">
-                                <div class="nk-news-list">
-                                    <a class="nk-news-item" href="#">
-                                        <div class="nk-news-icon">
-                                            <em class="icon ni ni-card-view"></em>
-                                        </div>
-                                        <div class="nk-news-text">
-                                            <p>Do you know the latest update of 2022? <span> A overview of our
-                                                    is now available on YouTube</span></p>
-                                            <em class="icon ni ni-external"></em>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div><!-- .card -->
-                    </div><!-- .nk-block -->
-                    <div class="nk-block">
                         <div class="row gy-gs">
-                            <div class="col-md-6 col-lg-4">
+                            <div class="col-12">
                                 <div class="nk-wg-card is-dark card card-bordered">
                                     <div class="card-inner">
                                         <div class="nk-iv-wg2">
                                             <div class="nk-iv-wg2-title">
-                                                <h6 class="title">Available Balance <em class="icon ni ni-info"></em></h6>
+                                                <h6 class="title">Available Balance In USD</h6>
                                             </div>
                                             <div class="nk-iv-wg2-text">
-                                                <div class="nk-iv-wg2-amount"> 105.94 <span class="change up"><span
-                                                            class="sign"></span>3.4%</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><!-- .card -->
-                            </div><!-- .col -->
-                            <div class="col-md-6 col-lg-4">
-                                <div class="nk-wg-card is-s1 card card-bordered">
-                                    <div class="card-inner">
-                                        <div class="nk-iv-wg2">
-                                            <div class="nk-iv-wg2-title">
-                                                <h6 class="title">Total Invested <em class="icon ni ni-info"></em></h6>
-                                            </div>
-                                            <div class="nk-iv-wg2-text">
-                                                <div class="nk-iv-wg2-amount"> 509,850.90 <span class="change up"><span
-                                                            class="sign"></span>2.8%</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><!-- .card -->
-                            </div><!-- .col -->
-                            <div class="col-md-12 col-lg-4">
-                                <div class="nk-wg-card is-s3 card card-bordered">
-                                    <div class="card-inner">
-                                        <div class="nk-iv-wg2">
-                                            <div class="nk-iv-wg2-title">
-                                                <h6 class="title">Total Profits <em class="icon ni ni-info"></em></h6>
-                                            </div>
-                                            <div class="nk-iv-wg2-text">
-                                                <div class="nk-iv-wg2-amount"> 50,600.48 <span class="change down"><span
-                                                            class="sign"></span>1.4%</span>
+                                                <div class="nk-iv-wg2-amount">
+                                                    <span>{{ number_format(Auth::user()->balance, 2) }}</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -140,7 +70,7 @@
                     </div><!-- .nk-block -->
                     <div class="nk-block">
                         <div class="row gy-gs">
-                            <div class="col-md-6 col-lg-4">
+                            <div class="col-md-6 col-lg-6">
                                 <div class="nk-wg-card card card-bordered h-100">
                                     <div class="card-inner h-100">
                                         <div class="nk-iv-wg2">
@@ -148,24 +78,30 @@
                                                 <h6 class="title">Balance in Account</h6>
                                             </div>
                                             <div class="nk-iv-wg2-text">
-                                                <div class="nk-iv-wg2-amount ui-v2">12,587.96</div>
+                                                <div class="nk-iv-wg2-amount ui-v2">$
+                                                    {{ number_format(Auth::user()->balance + $plan->sum('invested_amount'), 2) }}
+                                                </div>
                                                 <ul class="nk-iv-wg2-list">
                                                     <li>
                                                         <span class="item-label">Available Funds</span>
-                                                        <span class="item-value">105.94</span>
+                                                        <span class="item-value">$
+                                                            {{ number_format(Auth::user()->balance, 2) }}</span>
                                                     </li>
                                                     <li>
                                                         <span class="item-label">Invested Funds</span>
-                                                        <span class="item-value">12,582.02</span>
+                                                        <span class="item-value">$
+                                                            {{ number_format($plan->sum('invested_amount'), 2) }}</span>
                                                     </li>
                                                     <li class="total">
                                                         <span class="item-label">Total</span>
-                                                        <span class="item-value">12,587.96</span>
+                                                        <span class="item-value">$
+                                                            {{ number_format(Auth::user()->balance + $plan->sum('invested_amount'), 2) }}</span>
                                                     </li>
                                                 </ul>
                                             </div>
                                             <div class="nk-iv-wg2-cta">
-                                                <a href="{{ route('customer.withdraw.index') }}" class="btn btn-primary btn-lg btn-block">Withdraw
+                                                <a href="{{ route('customer.withdraw.index') }}"
+                                                    class="btn btn-primary btn-lg btn-block">Withdraw
                                                     Funds</a>
                                                 <a href="{{ route('customer.deposit.index') }}"
                                                     class="btn btn-light btn-lg btn-block mt-2">Deposit
@@ -175,45 +111,7 @@
                                     </div>
                                 </div><!-- .card -->
                             </div><!-- .col -->
-                            <div class="col-md-6 col-lg-4">
-                                <div class="nk-wg-card card card-bordered h-100">
-                                    <div class="card-inner h-100">
-                                        <div class="nk-iv-wg2">
-                                            <div class="nk-iv-wg2-title">
-                                                <h6 class="title">This Month Profit <em
-                                                        class="icon ni ni-info text-primary"></em></h6>
-                                            </div>
-                                            <div class="nk-iv-wg2-text">
-                                                <div class="nk-iv-wg2-amount ui-v2">1,457.23 <span class="change up"><span
-                                                            class="sign"></span>4.5%</span></div>
-                                                <ul class="nk-iv-wg2-list">
-                                                    <li>
-                                                        <span class="item-label">Profits</span>
-                                                        <span class="item-value">1,045.21</span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="item-label">Referrals</span>
-                                                        <span class="item-value">212.02</span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="item-label">Rewards</span>
-                                                        <span class="item-value">200.00</span>
-                                                    </li>
-                                                    <li class="total">
-                                                        <span class="item-label">Total Profit</span>
-                                                        <span class="item-value">1,457.23</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="nk-iv-wg2-cta">
-                                                <a href="#" class="btn btn-primary btn-lg btn-block">Invest &
-                                                    Earn</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><!-- .card -->
-                            </div><!-- .col -->
-                            <div class="col-md-12 col-lg-4">
+                            <div class="col-md-12 col-lg-6">
                                 <div class="nk-wg-card card card-bordered h-100">
                                     <div class="card-inner h-100">
                                         <div class="nk-iv-wg2">
@@ -221,34 +119,28 @@
                                                 <h6 class="title">My Investment</h6>
                                             </div>
                                             <div class="nk-iv-wg2-text">
-                                                <div class="nk-iv-wg2-amount ui-v2">319 <span class="sub">03</span>
+                                                <div class="nk-iv-wg2-amount ui-v2">{{ $plan->count() }}
                                                     Active</div>
                                                 <ul class="nk-iv-wg2-list">
-                                                    <li>
-                                                        <span class="item-label"><a href="#">Silver</a>
-                                                            <small>- 4.76% for 21 Days</small></span>
-                                                        <span class="item-value">2,500.00</span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="item-label"><a href="#">Silver</a>
-                                                            <small>- 4.76% for 21 Days</small></span>
-                                                        <span class="item-value">2,000.00</span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="item-label"><a href="#">Dimond</a>
-                                                            <small>- 14.29% for 14 Days</small></span>
-                                                        <span class="item-value">8,000.00</span>
-                                                    </li>
-                                                    <li>
-                                                        <span class="item-label"><a href="#">Starter</a>
-                                                            <small>- 1.67% for 30 Days</small></span>
-                                                        <span class="item-value">335.00</span>
-                                                    </li>
+                                                    @foreach ($plan as $p)
+                                                        <li>
+                                                            <span class="item-label text-capitalize"><a
+                                                                    href="#">{{ $p->plan_name }}</a>
+                                                                <small>- ${{ number_format($p->daily_profit, 2) }} for
+                                                                    {{ $p->tenure }} Days</small></span>
+                                                            <span class="item-value">$
+                                                                {{ number_format($p->invested_amount, 2) }}</span>
+                                                        </li>
+                                                    @endforeach
                                                 </ul>
                                             </div>
                                             <div class="nk-iv-wg2-cta">
-                                                <a href="#" class="btn btn-light btn-lg btn-block">See
+                                                <a href="{{ route('customer.myplan.index') }}"
+                                                    class="btn btn-light btn-lg btn-block">See
                                                     all Investment</a>
+                                                <a href="{{ route('customer.mining-plans.index') }}"
+                                                    class="btn btn-primary btn-lg btn-block mt-2">Invest &
+                                                    Earn</a>
                                             </div>
                                         </div>
                                     </div>

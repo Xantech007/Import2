@@ -17,7 +17,7 @@
     <link id="skin-default" rel="stylesheet" href="{{ asset('assets/css/theme.css?ver=3.1.2') }}">
 </head>
 
-<body class="nk-body npc-invest bg-lighter">
+<body class="nk-body npc-invest bg-lighter {{ session('dark-mode') }}">
     <div class="nk-app-root">
         <!-- wrap @s -->
         <div class="nk-wrap ">
@@ -28,6 +28,7 @@
             @yield('content')
             <!-- content @e -->
             <!-- footer @s -->
+            <br><br>
             @include('customer.layout.footer')
             <!-- footer @e -->
         </div>
@@ -38,6 +39,8 @@
     <script src="{{ asset('assets/js/bundle.js?ver=3.1.2') }}"></script>
     <script src="{{ asset('assets/js/scripts.js?ver=3.1.2') }}"></script>
     <script src="{{ asset('assets/js/charts/chart-invest.js?ver=3.1.2') }}"></script>
+    <script src="{{ asset('vendor/jsvalidation/js/jsvalidation.js') }}"></script>
+    @stack('script')
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-<div class="nk-footer nk-footer-fluid bg-lighter">
+<div class="nk-footer nk-footer-fluid bg-lighter fixed-bottom">
     <div class="container-xl wide-lg">
         <div class="nk-footer-wrap">
             <div class="nk-footer-copyright"> &copy; 2022 DashLite. Template by <a

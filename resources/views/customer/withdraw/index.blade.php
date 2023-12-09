@@ -20,35 +20,46 @@
                             <div class="col-md-7 col-sm-12">
                                 <div class="card card-bordered h-100">
                                     <div class="card-inner">
-                                        <form action="{{ route('customer.withdraw.error') }}">
+                                        <form action="{{ route('customer.withdraw.process') }}" method="POST">
+                                            @csrf
                                             <div class="form-group">
                                                 <label class="form-label">Select Crypto</label>
                                                 <div class="form-control-wrap">
-                                                    <select class="form-select js-select2 select2-hidden-accessible"
-                                                        data-ui="lg" data-placeholder="Choose A Crypto">
+                                                    <select name="crypto" class="form-select js-select2 select2-hidden-accessible"
+                                                        data-ui="xl" data-placeholder="Choose A Conversion Crypto" data-search="on">
                                                         <option value="">Select a cryptocurrency to deposit</option>
-                                                        <option value="bitcoin">Bitcoin</option>
-                                                        <option value="etherum">Etherum</option>
-                                                        <option value="tether">Tether</option>
+                                                        @foreach ($crypto as $c)
+                                                        <option value="{{ $c->name }}">{{ Str::ucfirst($c->name) }}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
+                                                @error('crypto')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
-                                                <label class="form-label" for="default-05">Amount</label>
-                                                <div class="form-control-wrap">
-                                                    <div class="form-text-hint">
-                                                        <span class="overline-title">BTC</span>
-                                                    </div>
-                                                    <input type="text" class="form-control form-control-lg"
-                                                        id="default-05" placeholder="Enter Crypto Amount">
+                                                <div class="form-label-group">
+                                                    <label class="form-label" for="default-05">Amount</label>
                                                 </div>
+                                                <div class="form-control-group">
+                                                    <div class="form-info">USD</div>
+                                                    <input type="text" name="amount" class="form-control form-control-xl"
+                                                        id="default-05" placeholder="Enter Amount" value="{{ old('name') }}">
+                                                </div>
+                                                <div class="form-note">Withdrawal Threshold: $ 200</div>
+                                                @error('amount')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-label" for="phone-no">Wallet Address</label>
                                                 <div class="form-control-wrap">
-                                                    <input type="text" class="form-control form-control-lg"
-                                                        id="phone-no" placeholder="Enter Wallet Address">
+                                                    <input type="text" name="address" class="form-control form-control-xl"
+                                                        id="phone-no" placeholder="Enter Wallet Address" value="{{ old('address') }}">
                                                 </div>
+                                                @error('address')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                             </div>
                                             <div class="form-group">
                                                 <button type="submit" class="btn btn-lg btn-primary">Withdraw</button>

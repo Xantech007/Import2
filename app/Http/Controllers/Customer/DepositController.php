@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
+use App\Models\Crypto;
 use Illuminate\Http\Request;
+use BayAreaWebPro\MultiStepForms\MultiStepForm as Form;
 
 class DepositController extends Controller
 {
@@ -16,6 +18,8 @@ class DepositController extends Controller
     // This returns view for deposit success
     public function success()
     {
-        return view('customer.deposit.success');
+        $crypto = Crypto::where('name', session()->get('crypto'))->first();
+        return view('customer.deposit.success', compact('crypto'));
     }
+
 }

@@ -2,12 +2,15 @@
     <div class="container-xl wide-lg">
         <div class="nk-header-wrap">
             <div class="nk-menu-trigger me-sm-2 d-lg-none">
-                <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="headerNav"><em class="icon ni ni-menu"></em></a>
+                <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="headerNav"><em
+                        class="icon ni ni-menu"></em></a>
             </div>
             <div class="nk-header-brand">
                 <a href="html/index.html" class="logo-link">
-                    <img class="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
-                    <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
+                    <img class="logo-light logo-img" src="{{ asset('images/logo.png') }}" srcset="./images/logo2x.png 2x"
+                        alt="logo">
+                    <img class="logo-dark logo-img" src="{{ asset('images/logo-dark.png') }}" srcset="./images/logo-dark2x.png 2x"
+                        alt="logo-dark">
                     <span class="nio-version">Invest</span>
                 </a>
             </div><!-- .nk-header-brand -->
@@ -15,17 +18,20 @@
                 <div class="nk-header-mobile">
                     <div class="nk-header-brand">
                         <a href="html/index.html" class="logo-link">
-                            <img class="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
-                            <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
+                            <img class="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x"
+                                alt="logo">
+                            <img class="logo-dark logo-img" src="./images/logo-dark.png"
+                                srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
                             <span class="nio-version">Invest</span>
                         </a>
                     </div>
                     <div class="nk-menu-trigger me-n2">
-                        <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="headerNav"><em class="icon ni ni-arrow-left"></em></a>
+                        <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="headerNav"><em
+                                class="icon ni ni-arrow-left"></em></a>
                     </div>
                 </div>
                 <!-- Menu -->
-                <ul class="nk-menu nk-menu-main">
+                <ul class="nk-menu nk-menu-main ui-s2">
                     <li class="nk-menu-item">
                         <a href="{{ route('customer.dashboard') }}" class="nk-menu-link">
                             <span class="nk-menu-text">Dashboard</span>
@@ -66,7 +72,9 @@
                                             <em class="icon icon-circle bg-warning-dim ni ni-curve-down-right"></em>
                                         </div>
                                         <div class="nk-notification-content">
-                                            <div class="nk-notification-text">You have requested to <span>Widthdrawl</span></div>
+                                            <div class="nk-notification-text">You have requested to
+                                                <span>Widthdrawl</span>
+                                            </div>
                                             <div class="nk-notification-time">2 hrs ago</div>
                                         </div>
                                     </div>
@@ -75,7 +83,8 @@
                                             <em class="icon icon-circle bg-success-dim ni ni-curve-down-left"></em>
                                         </div>
                                         <div class="nk-notification-content">
-                                            <div class="nk-notification-text">Your <span>Deposit Order</span> is placed</div>
+                                            <div class="nk-notification-text">Your <span>Deposit Order</span> is placed
+                                            </div>
                                             <div class="nk-notification-time">2 hrs ago</div>
                                         </div>
                                     </div>
@@ -84,7 +93,9 @@
                                             <em class="icon icon-circle bg-warning-dim ni ni-curve-down-right"></em>
                                         </div>
                                         <div class="nk-notification-content">
-                                            <div class="nk-notification-text">You have requested to <span>Widthdrawl</span></div>
+                                            <div class="nk-notification-text">You have requested to
+                                                <span>Widthdrawl</span>
+                                            </div>
                                             <div class="nk-notification-time">2 hrs ago</div>
                                         </div>
                                     </div>
@@ -93,7 +104,8 @@
                                             <em class="icon icon-circle bg-success-dim ni ni-curve-down-left"></em>
                                         </div>
                                         <div class="nk-notification-content">
-                                            <div class="nk-notification-text">Your <span>Deposit Order</span> is placed</div>
+                                            <div class="nk-notification-text">Your <span>Deposit Order</span> is placed
+                                            </div>
                                             <div class="nk-notification-time">2 hrs ago</div>
                                         </div>
                                     </div>
@@ -102,7 +114,9 @@
                                             <em class="icon icon-circle bg-warning-dim ni ni-curve-down-right"></em>
                                         </div>
                                         <div class="nk-notification-content">
-                                            <div class="nk-notification-text">You have requested to <span>Widthdrawl</span></div>
+                                            <div class="nk-notification-text">You have requested to
+                                                <span>Widthdrawl</span>
+                                            </div>
                                             <div class="nk-notification-time">2 hrs ago</div>
                                         </div>
                                     </div>
@@ -111,7 +125,8 @@
                                             <em class="icon icon-circle bg-success-dim ni ni-curve-down-left"></em>
                                         </div>
                                         <div class="nk-notification-content">
-                                            <div class="nk-notification-text">Your <span>Deposit Order</span> is placed</div>
+                                            <div class="nk-notification-text">Your <span>Deposit Order</span> is placed
+                                            </div>
                                             <div class="nk-notification-time">2 hrs ago</div>
                                         </div>
                                     </div>
@@ -157,7 +172,16 @@
                             </ul>
                         </div>
                     </li><!-- .dropdown -->
-                    <li class="hide-mb-sm"><a href="#" class="nk-quick-nav-icon" data-bs-toggle="tooltip" title="Sign out"><em class="icon ni ni-signout"></em></a></li>
+                    <li class="hide-mb-sm">
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                            class="nk-quick-nav-icon" data-bs-toggle="tooltip" title="Sign out">
+                            <em class="icon ni ni-signout"></em>
+                        </a>
+                    </li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                     <li class="dropdown user-dropdown order-sm-first">
                         <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
                             <div class="user-toggle">
@@ -165,8 +189,12 @@
                                     <em class="icon ni ni-user-alt"></em>
                                 </div>
                                 <div class="user-info d-none d-xl-block">
-                                    <div class="user-status user-status-unverified">Unverified</div>
-                                    <div class="user-name dropdown-indicator">Abu Bin Ishityak</div>
+                                    <div class="user-status @if (Auth::user()->status == 'active')
+                                        user-status-verified
+                                    @else
+                                    user-status-unverified
+                                    @endif text-capitalize">{{ Auth::user()->status }}</div>
+                                    <div class="user-name dropdown-indicator text-capitalize">{{ Auth::user()->name }}</div>
                                 </div>
                             </div>
                         </a>
@@ -177,24 +205,27 @@
                                         <span>AB</span>
                                     </div>
                                     <div class="user-info">
-                                        <span class="lead-text">Abu Bin Ishtiyak</span>
-                                        <span class="sub-text">info@softnio.com</span>
-                                    </div>
-                                    <div class="user-action">
-                                        <a class="btn btn-icon me-n2" href="html/invest/profile-setting.html"><em class="icon ni ni-setting"></em></a>
+                                        <span class="lead-text">{{ Auth::user()->name }}</span>
+                                        <span class="sub-text">{{ Auth::user()->email }}</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="dropdown-inner user-account-info">
                                 <h6 class="overline-title-alt">Account Balance</h6>
-                                <div class="user-balance">1,494.23 <small class="currency currency-usd">USD</small></div>
-                                <div class="user-balance-sub">Locked <span>15,495.39 <span class="currency currency-usd">USD</span></span></div>
-                                <a href="#" class="link"><span>Withdraw Balance</span> <em class="icon ni ni-wallet-out"></em></a>
+                                <div class="user-balance">{{ number_format(Auth::user()->balance, 2) }} <small class="currency currency-usd">USD</small>
+                                </div>
+                                <div class="user-balance-sub">Invested <span>{{ number_format($myplan->sum('invested_amount'), 2) }} <span
+                                            class="currency currency-usd">USD</span></span></div>
+                                <a href="#" class="link"><span>Withdraw Balance</span> <em
+                                        class="icon ni ni-wallet-out"></em></a>
                             </div>
                             <div class="dropdown-inner">
                                 <ul class="link-list">
-                                    <li><a href="{{ route('customer.profile.index') }}"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
-                                    <li><a class="dark-switch" href="#"><em class="icon ni ni-moon"></em><span>Dark Mode</span></a></li>
+                                    <li><a href="{{ route('customer.profile.index') }}"><em
+                                                class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
+                                    <li class="d-flex justify-content-between"><div><a href="#"><em
+                                                class="icon ni ni-moon"></em><span>Dark Mode</span>
+                                            </a></div><div class="mt-1">@livewire('theme')</div></li>
                                 </ul>
                             </div>
                         </div>

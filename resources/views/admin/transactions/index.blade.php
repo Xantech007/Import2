@@ -10,7 +10,7 @@
                             <div class="nk-block-head-content">
                                 <h3 class="nk-block-title page-title">Crypto Transaction</h3>
                                 <div class="nk-block-des text-soft">
-                                    <p>You have total 12,835 orders.</p>
+                                    <p>You have total {{ $tranx->count() }} transactions.</p>
                                 </div>
                             </div><!-- .nk-block-head-content -->
                         </div><!-- .nk-block-between -->
@@ -21,7 +21,7 @@
                                 <div class="card-inner">
                                     <div class="card-title-group">
                                         <div class="card-title">
-                                            <h5 class="title">All Orders</h5>
+                                            <h5 class="title">All Transactions</h5>
                                         </div>
                                         <div class="card-tools me-n1">
                                             <ul class="btn-toolbar gx-1">
@@ -30,126 +30,6 @@
                                                         data-target="search"><em class="icon ni ni-search"></em></a>
                                                 </li><!-- li -->
                                                 <li class="btn-toolbar-sep"></li><!-- li -->
-                                                <li>
-                                                    <div class="dropdown">
-                                                        <a href="#" class="btn btn-trigger btn-icon dropdown-toggle"
-                                                            data-bs-toggle="dropdown">
-                                                            <div class="badge badge-circle bg-primary">4</div>
-                                                            <em class="icon ni ni-filter-alt"></em>
-                                                        </a>
-                                                        <div
-                                                            class="filter-wg dropdown-menu dropdown-menu-xl dropdown-menu-end">
-                                                            <div class="dropdown-head">
-                                                                <span class="sub-title dropdown-title">Advance Filter</span>
-                                                                <div class="dropdown">
-                                                                    <a href="#" class="link link-light">
-                                                                        <em class="icon ni ni-more-h"></em>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="dropdown-body dropdown-body-rg">
-                                                                <div class="row gx-6 gy-4">
-                                                                    <div class="col-6">
-                                                                        <div class="form-group">
-                                                                            <label
-                                                                                class="overline-title overline-title-alt">Type</label>
-                                                                            <select class="form-select js-select2">
-                                                                                <option value="any">Any Type</option>
-                                                                                <option value="deposit">Deposit</option>
-                                                                                <option value="buy">Buy Coin</option>
-                                                                                <option value="sell">Sell Coin</option>
-                                                                                <option value="transfer">Transfer</option>
-                                                                                <option value="withdraw">Withdraw</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-6">
-                                                                        <div class="form-group">
-                                                                            <label
-                                                                                class="overline-title overline-title-alt">Status</label>
-                                                                            <select class="form-select js-select2">
-                                                                                <option value="any">Any Status</option>
-                                                                                <option value="pending">Pending</option>
-                                                                                <option value="cancel">Cancel</option>
-                                                                                <option value="process">Process</option>
-                                                                                <option value="completed">Completed</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-6">
-                                                                        <div class="form-group">
-                                                                            <label
-                                                                                class="overline-title overline-title-alt">Pay
-                                                                                Currency</label>
-                                                                            <select class="form-select js-select2">
-                                                                                <option value="any">Any Coin</option>
-                                                                                <option value="bitcoin">Bitcoin</option>
-                                                                                <option value="ethereum">Ethereum</option>
-                                                                                <option value="litecoin">Litecoin</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-6">
-                                                                        <div class="form-group">
-                                                                            <label
-                                                                                class="overline-title overline-title-alt">Method</label>
-                                                                            <select class="form-select js-select2">
-                                                                                <option value="any">Any Method</option>
-                                                                                <option value="paypal">PayPal</option>
-                                                                                <option value="bank">Bank</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-6">
-                                                                        <div class="form-group">
-                                                                            <div
-                                                                                class="custom-control custom-control-sm custom-checkbox">
-                                                                                <input type="checkbox"
-                                                                                    class="custom-control-input"
-                                                                                    id="includeDel">
-                                                                                <label class="custom-control-label"
-                                                                                    for="includeDel"> Including
-                                                                                    Deleted</label>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12">
-                                                                        <div class="form-group">
-                                                                            <button type="button"
-                                                                                class="btn btn-secondary">Filter</button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="dropdown-foot between">
-                                                                <a class="clickable" href="#">Reset Filter</a>
-                                                                <a href="#savedFilter" data-bs-toggle="modal">Save
-                                                                    Filter</a>
-                                                            </div>
-                                                        </div><!-- .filter-wg -->
-                                                    </div><!-- .dropdown -->
-                                                </li><!-- li -->
-                                                <li>
-                                                    <div class="dropdown">
-                                                        <a href="#" class="btn btn-trigger btn-icon dropdown-toggle"
-                                                            data-bs-toggle="dropdown">
-                                                            <em class="icon ni ni-setting"></em>
-                                                        </a>
-                                                        <div class="dropdown-menu dropdown-menu-xs dropdown-menu-end">
-                                                            <ul class="link-check">
-                                                                <li><span>Show</span></li>
-                                                                <li class="active"><a href="#">10</a></li>
-                                                                <li><a href="#">20</a></li>
-                                                                <li><a href="#">50</a></li>
-                                                            </ul>
-                                                            <ul class="link-check">
-                                                                <li><span>Order</span></li>
-                                                                <li class="active"><a href="#">DESC</a></li>
-                                                                <li><a href="#">ASC</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div><!-- .dropdown -->
-                                                </li><!-- li -->
                                             </ul><!-- .btn-toolbar -->
                                         </div><!-- .card-tools -->
                                         <div class="card-search search-wrap" data-search="search">
@@ -168,672 +48,98 @@
                                 <div class="card-inner p-0">
                                     <div class="nk-tb-list nk-tb-tnx">
                                         <div class="nk-tb-item nk-tb-head">
-                                            <div class="nk-tb-col"><span>Details</span></div>
-                                            <div class="nk-tb-col tb-col-xxl"><span>Source</span></div>
-                                            <div class="nk-tb-col tb-col-lg"><span>Order</span></div>
+                                            <div class="nk-tb-col"><span>Customer</span></div>
+                                            <div class="nk-tb-col tb-col-xxl"><span>Crypto</span></div>
                                             <div class="nk-tb-col text-end"><span>Amount</span></div>
-                                            <div class="nk-tb-col text-end tb-col-sm"><span>Balance</span></div>
+                                            <div class="nk-tb-col text-end tb-col-sm"><span>Type</span></div>
                                             <div class="nk-tb-col nk-tb-col-status"><span
                                                     class="sub-text d-none d-md-block">Status</span></div>
                                             <div class="nk-tb-col nk-tb-col-tools"></div>
                                         </div><!-- .nk-tb-item -->
-                                        <div class="nk-tb-item">
-                                            <div class="nk-tb-col">
-                                                <div class="nk-tnx-type">
-                                                    <div class="nk-tnx-type-icon bg-success-dim text-success">
-                                                        <em class="icon ni ni-arrow-up-right"></em>
-                                                    </div>
-                                                    <div class="nk-tnx-type-text">
-                                                        <span class="tb-lead">Deposited Funds</span>
-                                                        <span class="tb-date">18/10/2019 12:04 PM</span>
+                                        @foreach ($tranx as $t)
+                                            <div class="nk-tb-item">
+                                                <div class="nk-tb-col">
+                                                    <div class="nk-tnx-type">
+                                                        <div class="nk-tnx-type-text">
+                                                            <span
+                                                                class="tb-lead text-capitalize">{{ $t->user->name }}</span>
+                                                            <span class="tb-date">{{ $t->user->email }}</span>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-xxl">
-                                                <span class="tb-lead-sub">Using PayPal Account</span>
-                                                <span class="tb-sub">mypay*****com</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-lg">
-                                                <span class="tb-lead-sub">YWLX52JG73</span>
-                                                <span class="badge badge-dot bg-success">Deposit</span>
-                                            </div>
-                                            <div class="nk-tb-col text-end">
-                                                <span class="tb-amount">+ 0.010201 <span>BTC</span></span>
-                                                <span class="tb-amount-sm">1290.49 USD</span>
-                                            </div>
-                                            <div class="nk-tb-col text-end tb-col-sm">
-                                                <span class="tb-amount">1.30910201 <span>BTC</span></span>
-                                                <span class="tb-amount-sm">101290.49 USD</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-status">
-                                                <div class="dot dot-success d-md-none"></div>
-                                                <span
-                                                    class="badge badge-sm badge-dim bg-outline-success d-none d-md-inline-flex">Completed</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-tools">
-                                                <ul class="nk-tb-actions gx-2">
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#"
-                                                            class="bg-white btn btn-sm btn-outline-light btn-icon"
-                                                            data-bs-toggle="tooltip" data-bs-placement="top"
-                                                            title="Approve"><em class="icon ni ni-done"></em></a>
-                                                    </li>
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#tranxDetails" data-bs-toggle="modal"
-                                                            class="bg-white btn btn-sm btn-outline-light btn-icon btn-tooltip"
-                                                            title="Details"><em class="icon ni ni-eye"></em></a>
-                                                    </li>
-                                                    <li>
-                                                        <div class="dropdown">
-                                                            <a href="#"
-                                                                class="dropdown-toggle bg-white btn btn-sm btn-outline-light btn-icon"
-                                                                data-bs-toggle="dropdown"><em
-                                                                    class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-end">
-                                                                <ul class="link-list-opt">
-                                                                    <li><a href="#"><em
-                                                                                class="icon ni ni-done"></em><span>Approve</span></a>
-                                                                    </li>
-                                                                    <li><a href="#"><em
-                                                                                class="icon ni ni-cross-round"></em><span>Reject</span></a>
-                                                                    </li>
-                                                                    <li><a href="#"><em
-                                                                                class="icon ni ni-repeat"></em><span>Check</span></a>
-                                                                    </li>
-                                                                    <li><a href="#tranxDetails" data-bs-toggle="modal"><em
-                                                                                class="icon ni ni-eye"></em><span>View
-                                                                                Details</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div><!-- .nk-tb-item -->
-                                        <div class="nk-tb-item">
-                                            <div class="nk-tb-col">
-                                                <div class="nk-tnx-type">
-                                                    <div class="nk-tnx-type-icon bg-warning-dim text-warning">
-                                                        <em class="icon ni ni-arrow-up-right"></em>
-                                                    </div>
-                                                    <div class="nk-tnx-type-text">
-                                                        <span class="tb-lead">Withdrawal Funds</span>
-                                                        <span class="tb-date">18/10/2019 12:04 PM</span>
-                                                    </div>
+                                                <div class="nk-tb-col tb-col-xxl">
+                                                    <span class="tb-lead-sub text-capitalize">{{ $t->crypto }}</span>
                                                 </div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-xxl">
-                                                <span class="tb-lead-sub">Using PayPal Account</span>
-                                                <span class="tb-sub">mypay*****com</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-lg">
-                                                <span class="tb-lead-sub">YWLX52JG73</span>
-                                                <span class="badge badge-dot bg-warning">Withdrawal</span>
-                                            </div>
-                                            <div class="nk-tb-col text-end">
-                                                <span class="tb-amount">+ 0.010201 <span>BTC</span></span>
-                                                <span class="tb-amount-sm">1290.49 USD</span>
-                                            </div>
-                                            <div class="nk-tb-col text-end tb-col-sm">
-                                                <span class="tb-amount">1.30910201 <span>BTC</span></span>
-                                                <span class="tb-amount-sm">101290.49 USD</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-status">
-                                                <div class="dot dot-success d-md-none"></div>
-                                                <span
-                                                    class="badge badge-sm badge-dim bg-outline-warning d-none d-md-inline-flex">Upcoming</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-tools">
-                                                <ul class="nk-tb-actions gx-2">
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#"
-                                                            class="bg-white btn btn-sm btn-outline-light btn-icon"
-                                                            data-bs-toggle="tooltip" data-bs-placement="top"
-                                                            title="Approve"><em class="icon ni ni-done"></em></a>
-                                                    </li>
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#tranxDetails" data-bs-toggle="modal"
-                                                            class="bg-white btn btn-sm btn-outline-light btn-icon btn-tooltip"
-                                                            title="Details"><em class="icon ni ni-eye"></em></a>
-                                                    </li>
-                                                    <li>
-                                                        <div class="dropdown">
-                                                            <a href="#"
-                                                                class="dropdown-toggle bg-white btn btn-sm btn-outline-light btn-icon"
-                                                                data-bs-toggle="dropdown"><em
-                                                                    class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-end">
-                                                                <ul class="link-list-opt">
-                                                                    <li><a href="#"><em
-                                                                                class="icon ni ni-done"></em><span>Approve</span></a>
-                                                                    </li>
-                                                                    <li><a href="#"><em
-                                                                                class="icon ni ni-cross-round"></em><span>Reject</span></a>
-                                                                    </li>
-                                                                    <li><a href="#"><em
-                                                                                class="icon ni ni-repeat"></em><span>Check</span></a>
-                                                                    </li>
-                                                                    <li><a href="#tranxDetails" data-bs-toggle="modal"><em
-                                                                                class="icon ni ni-eye"></em><span>View
-                                                                                Details</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div><!-- .nk-tb-item -->
-                                        <div class="nk-tb-item">
-                                            <div class="nk-tb-col">
-                                                <div class="nk-tnx-type">
-                                                    <div class="nk-tnx-type-icon bg-info-dim text-info">
-                                                        <em class="icon ni ni-arrow-up-right"></em>
-                                                    </div>
-                                                    <div class="nk-tnx-type-text">
-                                                        <span class="tb-lead">Credited Profits</span>
-                                                        <span class="tb-date">18/10/2019 12:04 PM</span>
-                                                    </div>
+                                                <div class="nk-tb-col text-end">
+                                                    <span class="tb-amount">{{ $t->amount }}
+                                                        <span>{{ $t->abbr }}</span></span>
+                                                    <span class="tb-amount-sm">1290.49 USD</span>
                                                 </div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-xxl">
-                                                <span class="tb-lead-sub">Using PayPal Account</span>
-                                                <span class="tb-sub">mypay*****com</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-lg">
-                                                <span class="tb-lead-sub">YWLX52JG73</span>
-                                                <span class="badge badge-dot bg-info">Profit</span>
-                                            </div>
-                                            <div class="nk-tb-col text-end">
-                                                <span class="tb-amount">+ 0.010201 <span>BTC</span></span>
-                                                <span class="tb-amount-sm">1290.49 USD</span>
-                                            </div>
-                                            <div class="nk-tb-col text-end tb-col-sm">
-                                                <span class="tb-amount">1.30910201 <span>BTC</span></span>
-                                                <span class="tb-amount-sm">101290.49 USD</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-status">
-                                                <div class="dot dot-info d-md-none"></div>
-                                                <span
-                                                    class="badge badge-sm badge-dim bg-outline-info d-none d-md-inline-flex">Pending</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-tools">
-                                                <ul class="nk-tb-actions gx-2">
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#"
-                                                            class="bg-white btn btn-sm btn-outline-light btn-icon"
-                                                            data-bs-toggle="tooltip" data-bs-placement="top"
-                                                            title="Approve"><em class="icon ni ni-done"></em></a>
-                                                    </li>
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#tranxDetails" data-bs-toggle="modal"
-                                                            class="bg-white btn btn-sm btn-outline-light btn-icon btn-tooltip"
-                                                            title="Details"><em class="icon ni ni-eye"></em></a>
-                                                    </li>
-                                                    <li>
-                                                        <div class="dropdown">
-                                                            <a href="#"
-                                                                class="dropdown-toggle bg-white btn btn-sm btn-outline-light btn-icon"
-                                                                data-bs-toggle="dropdown"><em
-                                                                    class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-end">
-                                                                <ul class="link-list-opt">
-                                                                    <li><a href="#"><em
-                                                                                class="icon ni ni-done"></em><span>Approve</span></a>
-                                                                    </li>
-                                                                    <li><a href="#"><em
-                                                                                class="icon ni ni-cross-round"></em><span>Reject</span></a>
-                                                                    </li>
-                                                                    <li><a href="#"><em
-                                                                                class="icon ni ni-repeat"></em><span>Check</span></a>
-                                                                    </li>
-                                                                    <li><a href="#tranxDetails" data-bs-toggle="modal"><em
-                                                                                class="icon ni ni-eye"></em><span>View
-                                                                                Details</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div><!-- .nk-tb-item -->
-                                        <div class="nk-tb-item">
-                                            <div class="nk-tb-col">
-                                                <div class="nk-tnx-type">
-                                                    <div class="nk-tnx-type-icon bg-danger-dim text-danger">
-                                                        <em class="icon ni ni-arrow-up-right"></em>
-                                                    </div>
-                                                    <div class="nk-tnx-type-text">
-                                                        <span class="tb-lead">Withdrawal Funds</span>
-                                                        <span class="tb-date">18/10/2019 12:04 PM</span>
-                                                    </div>
+                                                <div class="nk-tb-col text-end tb-col-sm">
+                                                    <span
+                                                        class="tb-amount text-capitalize @if ($t->tranx_type == 'deposit') text-primary @else
+                                                    text-warning @endif">{{ $t->tranx_type }}</span>
+                                                    <span
+                                                        class="tb-amount-sm">{{ $t->created_at->toFormattedDateString() }}</span>
                                                 </div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-xxl">
-                                                <span class="tb-lead-sub">Using PayPal Account</span>
-                                                <span class="tb-sub">mypay*****com</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-lg">
-                                                <span class="tb-lead-sub">YWLX52JG73</span>
-                                                <span class="badge badge-dot bg-danger">Withdrawal</span>
-                                            </div>
-                                            <div class="nk-tb-col text-end">
-                                                <span class="tb-amount">+ 0.010201 <span>BTC</span></span>
-                                                <span class="tb-amount-sm">1290.49 USD</span>
-                                            </div>
-                                            <div class="nk-tb-col text-end tb-col-sm">
-                                                <span class="tb-amount">1.30910201 <span>BTC</span></span>
-                                                <span class="tb-amount-sm">101290.49 USD</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-status">
-                                                <div class="dot dot-success d-md-none"></div>
-                                                <span
-                                                    class="badge badge-sm badge-dim bg-outline-danger d-none d-md-inline-flex">Rejected</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-tools">
-                                                <ul class="nk-tb-actions gx-2">
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#"
-                                                            class="bg-white btn btn-sm btn-outline-light btn-icon"
-                                                            data-bs-toggle="tooltip" data-bs-placement="top"
-                                                            title="Approve"><em class="icon ni ni-done"></em></a>
-                                                    </li>
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#tranxDetails" data-bs-toggle="modal"
-                                                            class="bg-white btn btn-sm btn-outline-light btn-icon btn-tooltip"
-                                                            title="Details"><em class="icon ni ni-eye"></em></a>
-                                                    </li>
-                                                    <li>
-                                                        <div class="dropdown">
-                                                            <a href="#"
-                                                                class="dropdown-toggle bg-white btn btn-sm btn-outline-light btn-icon"
-                                                                data-bs-toggle="dropdown"><em
-                                                                    class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-end">
-                                                                <ul class="link-list-opt">
-                                                                    <li><a href="#"><em
-                                                                                class="icon ni ni-done"></em><span>Approve</span></a>
-                                                                    </li>
-                                                                    <li><a href="#"><em
-                                                                                class="icon ni ni-cross-round"></em><span>Reject</span></a>
-                                                                    </li>
-                                                                    <li><a href="#"><em
-                                                                                class="icon ni ni-repeat"></em><span>Check</span></a>
-                                                                    </li>
-                                                                    <li><a href="#tranxDetails" data-bs-toggle="modal"><em
-                                                                                class="icon ni ni-eye"></em><span>View
-                                                                                Details</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div><!-- .nk-tb-item -->
-                                        <div class="nk-tb-item">
-                                            <div class="nk-tb-col">
-                                                <div class="nk-tnx-type">
-                                                    <div class="nk-tnx-type-icon bg-warning-dim text-warning">
-                                                        <em class="icon ni ni-arrow-up-right"></em>
+                                                <div class="nk-tb-col nk-tb-col-status">
+                                                    <div
+                                                        class="dot @if ($t->status == 'approved') dot-success @endif
+                                                     @if ($t->status == 'pending') dot-warning @endif
+                                                     @if ($t->status == 'declined') dot-danger @endif d-md-none">
                                                     </div>
-                                                    <div class="nk-tnx-type-text">
-                                                        <span class="tb-lead">Deposited Funds</span>
-                                                        <span class="tb-date">18/10/2019 12:04 PM</span>
-                                                    </div>
+                                                    <span
+                                                        class="badge badge-sm badge-dim @if ($t->status == 'approved') bg-outline-success @endif
+                                                        @if ($t->status == 'pending') bg-outline-warning @endif
+                                                        @if ($t->status == 'declined') bg-outline-danger @endif
+                                                        d-none d-md-inline-flex text-capitalize">{{ $t->status }}</span>
                                                 </div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-xxl">
-                                                <span class="tb-lead-sub">Using PayPal Account</span>
-                                                <span class="tb-sub">mypay*****com</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-lg">
-                                                <span class="tb-lead-sub">YWLX52JG73</span>
-                                                <span class="badge badge-dot bg-warning">Deposit</span>
-                                            </div>
-                                            <div class="nk-tb-col text-end">
-                                                <span class="tb-amount">+ 0.010201 <span>BTC</span></span>
-                                                <span class="tb-amount-sm">1290.49 USD</span>
-                                            </div>
-                                            <div class="nk-tb-col text-end tb-col-sm">
-                                                <span class="tb-amount">1.30910201 <span>BTC</span></span>
-                                                <span class="tb-amount-sm">101290.49 USD</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-status">
-                                                <div class="dot dot-warning d-md-none"></div>
-                                                <span
-                                                    class="badge badge-sm badge-dim bg-outline-warning d-none d-md-inline-flex">Pending</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-tools">
-                                                <ul class="nk-tb-actions gx-2">
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#"
-                                                            class="bg-white btn btn-sm btn-outline-light btn-icon"
-                                                            data-bs-toggle="tooltip" data-bs-placement="top"
-                                                            title="Approve"><em class="icon ni ni-done"></em></a>
-                                                    </li>
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#tranxDetails" data-bs-toggle="modal"
-                                                            class="bg-white btn btn-sm btn-outline-light btn-icon btn-tooltip"
-                                                            title="Details"><em class="icon ni ni-eye"></em></a>
-                                                    </li>
-                                                    <li>
-                                                        <div class="dropdown">
-                                                            <a href="#"
-                                                                class="dropdown-toggle bg-white btn btn-sm btn-outline-light btn-icon"
-                                                                data-bs-toggle="dropdown"><em
-                                                                    class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-end">
-                                                                <ul class="link-list-opt">
-                                                                    <li><a href="#"><em
-                                                                                class="icon ni ni-done"></em><span>Approve</span></a>
-                                                                    </li>
-                                                                    <li><a href="#"><em
-                                                                                class="icon ni ni-cross-round"></em><span>Reject</span></a>
-                                                                    </li>
-                                                                    <li><a href="#"><em
-                                                                                class="icon ni ni-repeat"></em><span>Check</span></a>
-                                                                    </li>
-                                                                    <li><a href="#tranxDetails" data-bs-toggle="modal"><em
-                                                                                class="icon ni ni-eye"></em><span>View
-                                                                                Details</span></a></li>
-                                                                </ul>
+                                                <div class="nk-tb-col nk-tb-col-tools">
+                                                    <ul class="nk-tb-actions gx-2">
+                                                        @if ($t->status == 'pending')
+                                                            <li class="nk-tb-action-hidden">
+                                                                <a href="{{ route('admin.tranx.approve', $t->id) }}"
+                                                                    class="bg-white btn btn-sm btn-outline-light btn-icon"
+                                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                    title="Approve"><em class="icon ni ni-done"></em></a>
+                                                            </li>
+                                                        @endif
+                                                        <li class="nk-tb-action-hidden">
+                                                            <a href="{{ route('admin.tranx.detail', $t->id) }}"
+                                                                class="bg-white btn btn-sm btn-outline-light btn-icon btn-tooltip"
+                                                                title="Details"><em class="icon ni ni-eye"></em></a>
+                                                        </li>
+                                                        <li>
+                                                            <div class="dropdown">
+                                                                <a href="#"
+                                                                    class="dropdown-toggle bg-white btn btn-sm btn-outline-light btn-icon"
+                                                                    data-bs-toggle="dropdown"><em
+                                                                        class="icon ni ni-more-h"></em></a>
+                                                                <div class="dropdown-menu dropdown-menu-end">
+                                                                    <ul class="link-list-opt">
+                                                                        @if ($t->status == 'pending')
+                                                                            <li><a href="#"><em
+                                                                                        class="icon ni ni-done"></em><span>Approve</span></a>
+                                                                            </li>
+                                                                        @endif
+                                                                        @if ($t->status == 'pending')
+                                                                            <li><a
+                                                                                    href="{{ route('admin.tranx.decline', $t->id) }}"><em
+                                                                                        class="icon ni ni-cross-round"></em><span>Reject</span></a>
+                                                                            </li>
+                                                                        @endif
+                                                                        <li><a href="{{ route('admin.tranx.detail', $t->id) }}"
+                                                                                data-bs-toggle="modal"><em
+                                                                                    class="icon ni ni-eye"></em><span>View
+                                                                                    Details</span></a></li>
+                                                                    </ul>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div><!-- .nk-tb-item -->
-                                        <div class="nk-tb-item">
-                                            <div class="nk-tb-col">
-                                                <div class="nk-tnx-type">
-                                                    <div class="nk-tnx-type-icon bg-warning-dim text-warning">
-                                                        <em class="icon ni ni-arrow-up-right"></em>
-                                                    </div>
-                                                    <div class="nk-tnx-type-text">
-                                                        <span class="tb-lead">Withdrawal Funds</span>
-                                                        <span class="tb-date">18/10/2019 12:04 PM</span>
-                                                    </div>
+                                                        </li>
+                                                    </ul>
                                                 </div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-xxl">
-                                                <span class="tb-lead-sub">Using PayPal Account</span>
-                                                <span class="tb-sub">mypay*****com</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-lg">
-                                                <span class="tb-lead-sub">YWLX52JG73</span>
-                                                <span class="badge badge-dot bg-warning">Withdrawal</span>
-                                            </div>
-                                            <div class="nk-tb-col text-end">
-                                                <span class="tb-amount">+ 0.010201 <span>BTC</span></span>
-                                                <span class="tb-amount-sm">1290.49 USD</span>
-                                            </div>
-                                            <div class="nk-tb-col text-end tb-col-sm">
-                                                <span class="tb-amount">1.30910201 <span>BTC</span></span>
-                                                <span class="tb-amount-sm">101290.49 USD</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-status">
-                                                <div class="dot dot-success d-md-none"></div>
-                                                <span
-                                                    class="badge badge-sm badge-dim bg-outline-warning d-none d-md-inline-flex">Upcoming</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-tools">
-                                                <ul class="nk-tb-actions gx-2">
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#"
-                                                            class="bg-white btn btn-sm btn-outline-light btn-icon"
-                                                            data-bs-toggle="tooltip" data-bs-placement="top"
-                                                            title="Approve"><em class="icon ni ni-done"></em></a>
-                                                    </li>
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#tranxDetails" data-bs-toggle="modal"
-                                                            class="bg-white btn btn-sm btn-outline-light btn-icon btn-tooltip"
-                                                            title="Details"><em class="icon ni ni-eye"></em></a>
-                                                    </li>
-                                                    <li>
-                                                        <div class="dropdown">
-                                                            <a href="#"
-                                                                class="dropdown-toggle bg-white btn btn-sm btn-outline-light btn-icon"
-                                                                data-bs-toggle="dropdown"><em
-                                                                    class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-end">
-                                                                <ul class="link-list-opt">
-                                                                    <li><a href="#"><em
-                                                                                class="icon ni ni-done"></em><span>Approve</span></a>
-                                                                    </li>
-                                                                    <li><a href="#"><em
-                                                                                class="icon ni ni-cross-round"></em><span>Reject</span></a>
-                                                                    </li>
-                                                                    <li><a href="#"><em
-                                                                                class="icon ni ni-repeat"></em><span>Check</span></a>
-                                                                    </li>
-                                                                    <li><a href="#tranxDetails" data-bs-toggle="modal"><em
-                                                                                class="icon ni ni-eye"></em><span>View
-                                                                                Details</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div><!-- .nk-tb-item -->
-                                        <div class="nk-tb-item">
-                                            <div class="nk-tb-col">
-                                                <div class="nk-tnx-type">
-                                                    <div class="nk-tnx-type-icon bg-info-dim text-info">
-                                                        <em class="icon ni ni-arrow-up-right"></em>
-                                                    </div>
-                                                    <div class="nk-tnx-type-text">
-                                                        <span class="tb-lead">Credited Profits</span>
-                                                        <span class="tb-date">18/10/2019 12:04 PM</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-xxl">
-                                                <span class="tb-lead-sub">Using PayPal Account</span>
-                                                <span class="tb-sub">mypay*****com</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-lg">
-                                                <span class="tb-lead-sub">YWLX52JG73</span>
-                                                <span class="badge badge-dot bg-info">Profit</span>
-                                            </div>
-                                            <div class="nk-tb-col text-end">
-                                                <span class="tb-amount">+ 0.010201 <span>BTC</span></span>
-                                                <span class="tb-amount-sm">1290.49 USD</span>
-                                            </div>
-                                            <div class="nk-tb-col text-end tb-col-sm">
-                                                <span class="tb-amount">1.30910201 <span>BTC</span></span>
-                                                <span class="tb-amount-sm">101290.49 USD</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-status">
-                                                <div class="dot dot-info d-md-none"></div>
-                                                <span
-                                                    class="badge badge-sm badge-dim bg-outline-info d-none d-md-inline-flex">Pending</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-tools">
-                                                <ul class="nk-tb-actions gx-2">
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#"
-                                                            class="bg-white btn btn-sm btn-outline-light btn-icon"
-                                                            data-bs-toggle="tooltip" data-bs-placement="top"
-                                                            title="Approve"><em class="icon ni ni-done"></em></a>
-                                                    </li>
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#tranxDetails" data-bs-toggle="modal"
-                                                            class="bg-white btn btn-sm btn-outline-light btn-icon btn-tooltip"
-                                                            title="Details"><em class="icon ni ni-eye"></em></a>
-                                                    </li>
-                                                    <li>
-                                                        <div class="dropdown">
-                                                            <a href="#"
-                                                                class="dropdown-toggle bg-white btn btn-sm btn-outline-light btn-icon"
-                                                                data-bs-toggle="dropdown"><em
-                                                                    class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-end">
-                                                                <ul class="link-list-opt">
-                                                                    <li><a href="#"><em
-                                                                                class="icon ni ni-done"></em><span>Approve</span></a>
-                                                                    </li>
-                                                                    <li><a href="#"><em
-                                                                                class="icon ni ni-cross-round"></em><span>Reject</span></a>
-                                                                    </li>
-                                                                    <li><a href="#"><em
-                                                                                class="icon ni ni-repeat"></em><span>Check</span></a>
-                                                                    </li>
-                                                                    <li><a href="#tranxDetails" data-bs-toggle="modal"><em
-                                                                                class="icon ni ni-eye"></em><span>View
-                                                                                Details</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div><!-- .nk-tb-item -->
-                                        <div class="nk-tb-item">
-                                            <div class="nk-tb-col">
-                                                <div class="nk-tnx-type">
-                                                    <div class="nk-tnx-type-icon bg-danger-dim text-danger">
-                                                        <em class="icon ni ni-arrow-up-right"></em>
-                                                    </div>
-                                                    <div class="nk-tnx-type-text">
-                                                        <span class="tb-lead">Withdrawal Funds</span>
-                                                        <span class="tb-date">18/10/2019 12:04 PM</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-xxl">
-                                                <span class="tb-lead-sub">Using PayPal Account</span>
-                                                <span class="tb-sub">mypay*****com</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-lg">
-                                                <span class="tb-lead-sub">YWLX52JG73</span>
-                                                <span class="badge badge-dot bg-danger">Withdrawal</span>
-                                            </div>
-                                            <div class="nk-tb-col text-end">
-                                                <span class="tb-amount">+ 0.010201 <span>BTC</span></span>
-                                                <span class="tb-amount-sm">1290.49 USD</span>
-                                            </div>
-                                            <div class="nk-tb-col text-end tb-col-sm">
-                                                <span class="tb-amount">1.30910201 <span>BTC</span></span>
-                                                <span class="tb-amount-sm">101290.49 USD</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-status">
-                                                <div class="dot dot-success d-md-none"></div>
-                                                <span
-                                                    class="badge badge-sm badge-dim bg-outline-danger d-none d-md-inline-flex">Rejected</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-tools">
-                                                <ul class="nk-tb-actions gx-2">
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#"
-                                                            class="bg-white btn btn-sm btn-outline-light btn-icon"
-                                                            data-bs-toggle="tooltip" data-bs-placement="top"
-                                                            title="Approve"><em class="icon ni ni-done"></em></a>
-                                                    </li>
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#tranxDetails" data-bs-toggle="modal"
-                                                            class="bg-white btn btn-sm btn-outline-light btn-icon btn-tooltip"
-                                                            title="Details"><em class="icon ni ni-eye"></em></a>
-                                                    </li>
-                                                    <li>
-                                                        <div class="dropdown">
-                                                            <a href="#"
-                                                                class="dropdown-toggle bg-white btn btn-sm btn-outline-light btn-icon"
-                                                                data-bs-toggle="dropdown"><em
-                                                                    class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-end">
-                                                                <ul class="link-list-opt">
-                                                                    <li><a href="#"><em
-                                                                                class="icon ni ni-done"></em><span>Approve</span></a>
-                                                                    </li>
-                                                                    <li><a href="#"><em
-                                                                                class="icon ni ni-cross-round"></em><span>Reject</span></a>
-                                                                    </li>
-                                                                    <li><a href="#"><em
-                                                                                class="icon ni ni-repeat"></em><span>Check</span></a>
-                                                                    </li>
-                                                                    <li><a href="#tranxDetails" data-bs-toggle="modal"><em
-                                                                                class="icon ni ni-eye"></em><span>View
-                                                                                Details</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div><!-- .nk-tb-item -->
-                                        <div class="nk-tb-item">
-                                            <div class="nk-tb-col">
-                                                <div class="nk-tnx-type">
-                                                    <div class="nk-tnx-type-icon bg-warning-dim text-warning">
-                                                        <em class="icon ni ni-arrow-up-right"></em>
-                                                    </div>
-                                                    <div class="nk-tnx-type-text">
-                                                        <span class="tb-lead">Deposited Funds</span>
-                                                        <span class="tb-date">18/10/2019 12:04 PM</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-xxl">
-                                                <span class="tb-lead-sub">Using PayPal Account</span>
-                                                <span class="tb-sub">mypay*****com</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-lg">
-                                                <span class="tb-lead-sub">YWLX52JG73</span>
-                                                <span class="badge badge-dot bg-warning">Deposit</span>
-                                            </div>
-                                            <div class="nk-tb-col text-end">
-                                                <span class="tb-amount">+ 0.010201 <span>BTC</span></span>
-                                                <span class="tb-amount-sm">1290.49 USD</span>
-                                            </div>
-                                            <div class="nk-tb-col text-end tb-col-sm">
-                                                <span class="tb-amount">1.30910201 <span>BTC</span></span>
-                                                <span class="tb-amount-sm">101290.49 USD</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-status">
-                                                <div class="dot dot-warning d-md-none"></div>
-                                                <span
-                                                    class="badge badge-sm badge-dim bg-outline-warning d-none d-md-inline-flex">Pending</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-tools">
-                                                <ul class="nk-tb-actions gx-2">
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#"
-                                                            class="bg-white btn btn-sm btn-outline-light btn-icon"
-                                                            data-bs-toggle="tooltip" data-bs-placement="top"
-                                                            title="Approve"><em class="icon ni ni-done"></em></a>
-                                                    </li>
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#tranxDetails" data-bs-toggle="modal"
-                                                            class="bg-white btn btn-sm btn-outline-light btn-icon btn-tooltip"
-                                                            title="Details"><em class="icon ni ni-eye"></em></a>
-                                                    </li>
-                                                    <li>
-                                                        <div class="dropdown">
-                                                            <a href="#"
-                                                                class="dropdown-toggle bg-white btn btn-sm btn-outline-light btn-icon"
-                                                                data-bs-toggle="dropdown"><em
-                                                                    class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-end">
-                                                                <ul class="link-list-opt">
-                                                                    <li><a href="#"><em
-                                                                                class="icon ni ni-done"></em><span>Approve</span></a>
-                                                                    </li>
-                                                                    <li><a href="#"><em
-                                                                                class="icon ni ni-cross-round"></em><span>Reject</span></a>
-                                                                    </li>
-                                                                    <li><a href="#"><em
-                                                                                class="icon ni ni-repeat"></em><span>Check</span></a>
-                                                                    </li>
-                                                                    <li><a href="#tranxDetails" data-bs-toggle="modal"><em
-                                                                                class="icon ni ni-eye"></em><span>View
-                                                                                Details</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div><!-- .nk-tb-item -->
+                                            </div><!-- .nk-tb-item -->
+                                        @endforeach
                                     </div><!-- .nk-tb-list -->
                                 </div><!-- .card-inner -->
                                 <div class="card-inner">
@@ -855,89 +161,4 @@
             </div>
         </div>
     </div>
-    <!-- Tranx Detail Modal -->
-    <div class="modal fade" tabindex="-1" id="tranxDetails">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <a href="#" class="close" data-bs-dismiss="modal" aria-label="Close">
-                    <em class="icon ni ni-cross"></em>
-                </a>
-                <div class="modal-body modal-body-md">
-                    <div class="nk-modal-head mb-3 mb-sm-5">
-                        <h4 class="nk-modal-title title">Transaction <small class="text-primary">#TNX67234</small></h4>
-                    </div>
-                    <div class="nk-tnx-details">
-                        <div class="nk-block-between flex-wrap g-3">
-                            <div class="nk-tnx-type">
-                                <div class="nk-tnx-type-icon bg-warning text-white">
-                                    <em class="icon ni ni-arrow-up-right"></em>
-                                </div>
-                                <div class="nk-tnx-type-text">
-                                    <h5 class="title">+ 0.004560 BTC</h5>
-                                    <span class="sub-text mt-n1">15 Oct, 2019 09:45 PM</span>
-                                </div>
-                            </div>
-                            <ul class="align-center flex-wrap gx-3">
-                                <li>
-                                    <span class="badge badge-sm bg-success">Completed</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="nk-modal-head mt-sm-5 mt-4 mb-4">
-                            <h5 class="title">Transaction Info</h5>
-                        </div>
-                        <div class="row gy-3">
-                            <div class="col-lg-6">
-                                <span class="sub-text">Order ID</span>
-                                <span class="caption-text">YWLX52JG73</span>
-                            </div>
-                            <div class="col-lg-6">
-                                <span class="sub-text">Reference ID</span>
-                                <span class="caption-text text-break">NIY9TB2JG73YWLXPYM2U8HR</span>
-                            </div>
-                            <div class="col-lg-6">
-                                <span class="sub-text">Transaction Fee</span>
-                                <span class="caption-text">0.000002 BTC</span>
-                            </div>
-                            <div class="col-lg-6">
-                                <span class="sub-text">Amount</span>
-                                <span class="caption-text">0.004560 BTC</span>
-                            </div>
-                        </div><!-- .row -->
-                        <div class="nk-modal-head mt-sm-5 mt-4 mb-4">
-                            <h5 class="title">Transaction Details</h5>
-                        </div>
-                        <div class="row gy-3">
-                            <div class="col-lg-6">
-                                <span class="sub-text">Transaction Type</span>
-                                <span class="caption-text">Deposit</span>
-                            </div>
-                            <div class="col-lg-6">
-                                <span class="sub-text">Payment Gateway</span>
-                                <span class="caption-text align-center">CoinPayments <span
-                                        class="badge bg-primary ms-2 text-white">Online Gateway</span></span>
-                            </div>
-                            <div class="col-lg-6">
-                                <span class="sub-text">Payment From</span>
-                                <span class="caption-text text-break">1xA058106537340385c87d264f93</span>
-                            </div>
-                            <div class="col-lg-6">
-                                <span class="sub-text">Payment To</span>
-                                <span class="caption-text text-break">1x0385c87d264A05810653734f93</span>
-                            </div>
-                            <div class="col-lg-12">
-                                <span class="sub-text">Transaction Hash</span>
-                                <span
-                                    class="caption-text text-break">Tx156d3342d5c87d264f9359200xa058106537340385c87d264f93</span>
-                            </div>
-                            <div class="col-lg-12">
-                                <span class="sub-text">Details</span>
-                                <span class="caption-text">Deposit Fund for Investment</span>
-                            </div>
-                        </div><!-- .row -->
-                    </div><!-- .nk-tnx-details -->
-                </div><!-- .modal-body -->
-            </div><!-- .modal-content -->
-        </div><!-- .modal-dialog -->
-    </div><!-- .modal -->
 @endsection

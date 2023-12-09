@@ -7,11 +7,10 @@
                 <div class="nk-content-body">
                     <div class="nk-block text-center">
                         <div class="nk-modal shadow p-5">
-                            <em class="nk-modal-icon icon icon-circle icon-circle-xxl ni ni-cross bg-danger"></em>
-                            <h4 class="nk-modal-title">Internal Error 504!</h4>
+                            <em class="nk-modal-icon icon icon-circle icon-circle-xxl ni ni-check bg-warning"></em>
+                            <h4 class="nk-modal-title">Withdrawal Pending!</h4>
                             <div class="nk-modal-text">
-                                <p class="sub-text">Sorry, an error occurred while processing your withdrawal request. Try
-                                    again later, while we fix the issue.</p>
+                                <p class="sub-text">Your withdrawal request of {{ $tranx['amount'] }} {{ $tranx['abbr'] }} (${{ number_format($tranx['value'], 2) }}) has been submitted successfully. Once it is approved, it will be sent to your wallet address.</p>
                             </div>
                             <div class="nk-modal-action-lg">
                                 <ul class="btn-group flex-wrap justify-center g-4">

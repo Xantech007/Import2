@@ -8,9 +8,9 @@
                     <div class="nk-block text-center">
                         <div class="nk-modal shadow p-5">
                             <em class="nk-modal-icon icon icon-circle icon-circle-xxl ni ni-check bg-success"></em>
-                            <h4 class="nk-modal-title">Deposit Successfully Submitted!</h4>
+                            <h4 class="nk-modal-title">{{ session()->get('amount') }} {{ $crypto->abbr }} Deposit Submitted</h4>
                             <div class="nk-modal-text">
-                                <p class="sub-text">Your deposit has been submitted successfully. Once we approve it, it will be added to your balance. This takes between 1 hour - 24 hours.</p>
+                                <p class="sub-text">Your deposit has been submitted successfully. Once we approve it, it will be added to your {{ Str::ucfirst($crypto->name) }} balance. This takes between 1 hour - 24 hours.</p>
                             </div>
                             <div class="nk-modal-action-lg">
                                 <ul class="btn-group flex-wrap justify-center g-4">
@@ -19,7 +19,6 @@
                                 </ul>
                             </div>
                         </div>
-                    </center>
                     </div><!-- nk-block -->
                 </div>
             </div>

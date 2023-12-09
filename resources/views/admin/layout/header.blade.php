@@ -2,24 +2,30 @@
     <div class="container-xl wide-xl">
         <div class="nk-header-wrap">
             <div class="nk-menu-trigger me-sm-2 d-lg-none">
-                <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="headerNav"><em class="icon ni ni-menu"></em></a>
+                <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="headerNav"><em
+                        class="icon ni ni-menu"></em></a>
             </div>
             <div class="nk-header-brand">
                 <a href="html/index.html" class="logo-link">
-                    <img class="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
-                    <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
+                    <img class="logo-light logo-img" src="{{ asset('images/logo.png') }}"
+                        srcset="./images/logo2x.png 2x" alt="logo">
+                    <img class="logo-dark logo-img" src="{{ asset('images/logo-dark.png') }}"
+                        srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
                 </a>
             </div><!-- .nk-header-brand -->
             <div class="nk-header-menu" data-content="headerNav">
                 <div class="nk-header-mobile">
                     <div class="nk-header-brand">
                         <a href="html/index.html" class="logo-link">
-                            <img class="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
-                            <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
+                            <img class="logo-light logo-img" src="{{ asset('images/logo.png') }}"
+                                srcset="./images/logo2x.png 2x" alt="logo">
+                            <img class="logo-dark logo-img" src="{{ asset('images/logo-dark.png') }}"
+                                srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
                         </a>
                     </div>
                     <div class="nk-menu-trigger me-n2">
-                        <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="headerNav"><em class="icon ni ni-arrow-left"></em></a>
+                        <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="headerNav"><em
+                                class="icon ni ni-arrow-left"></em></a>
                     </div>
                 </div>
                 <ul class="nk-menu nk-menu-main ui-s2">
@@ -68,7 +74,8 @@
                                             <em class="icon icon-circle bg-warning-dim ni ni-curve-down-right"></em>
                                         </div>
                                         <div class="nk-notification-content">
-                                            <div class="nk-notification-text">You have requested to <span>Widthdrawl</span></div>
+                                            <div class="nk-notification-text">You have requested to
+                                                <span>Widthdrawl</span></div>
                                             <div class="nk-notification-time">2 hrs ago</div>
                                         </div>
                                     </div>
@@ -77,7 +84,8 @@
                                             <em class="icon icon-circle bg-success-dim ni ni-curve-down-left"></em>
                                         </div>
                                         <div class="nk-notification-content">
-                                            <div class="nk-notification-text">Your <span>Deposit Order</span> is placed</div>
+                                            <div class="nk-notification-text">Your <span>Deposit Order</span> is placed
+                                            </div>
                                             <div class="nk-notification-time">2 hrs ago</div>
                                         </div>
                                     </div>
@@ -86,7 +94,8 @@
                                             <em class="icon icon-circle bg-warning-dim ni ni-curve-down-right"></em>
                                         </div>
                                         <div class="nk-notification-content">
-                                            <div class="nk-notification-text">You have requested to <span>Widthdrawl</span></div>
+                                            <div class="nk-notification-text">You have requested to
+                                                <span>Widthdrawl</span></div>
                                             <div class="nk-notification-time">2 hrs ago</div>
                                         </div>
                                     </div>
@@ -95,7 +104,8 @@
                                             <em class="icon icon-circle bg-success-dim ni ni-curve-down-left"></em>
                                         </div>
                                         <div class="nk-notification-content">
-                                            <div class="nk-notification-text">Your <span>Deposit Order</span> is placed</div>
+                                            <div class="nk-notification-text">Your <span>Deposit Order</span> is placed
+                                            </div>
                                             <div class="nk-notification-time">2 hrs ago</div>
                                         </div>
                                     </div>
@@ -104,7 +114,8 @@
                                             <em class="icon icon-circle bg-warning-dim ni ni-curve-down-right"></em>
                                         </div>
                                         <div class="nk-notification-content">
-                                            <div class="nk-notification-text">You have requested to <span>Widthdrawl</span></div>
+                                            <div class="nk-notification-text">You have requested to
+                                                <span>Widthdrawl</span></div>
                                             <div class="nk-notification-time">2 hrs ago</div>
                                         </div>
                                     </div>
@@ -113,7 +124,8 @@
                                             <em class="icon icon-circle bg-success-dim ni ni-curve-down-left"></em>
                                         </div>
                                         <div class="nk-notification-content">
-                                            <div class="nk-notification-text">Your <span>Deposit Order</span> is placed</div>
+                                            <div class="nk-notification-text">Your <span>Deposit Order</span> is placed
+                                            </div>
                                             <div class="nk-notification-time">2 hrs ago</div>
                                         </div>
                                     </div>
@@ -147,24 +159,30 @@
                                         <span class="sub-text">info@softnio.com</span>
                                     </div>
                                     <div class="user-action">
-                                        <a class="btn btn-icon me-n2" href="html/user-profile-setting.html"><em class="icon ni ni-setting"></em></a>
+                                        <a class="btn btn-icon me-n2" href="html/user-profile-setting.html"><em
+                                                class="icon ni ni-setting"></em></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="dropdown-inner user-account-info">
                                 <h6 class="overline-title-alt">Account Balance</h6>
-                                <div class="user-balance">1,494.23 <small class="currency currency-usd">USD</small></div>
+                                <div class="user-balance">1,494.23 <small class="currency currency-usd">USD</small>
+                                </div>
                             </div>
                             <div class="dropdown-inner">
                                 <ul class="link-list">
-                                    <li><a href="{{ route('admin.market-analysis') }}"><em class="icon ni ni-bar-c"></em><span>Market Analysis</span></a></li>
-                                    <li><a href="{{ route('admin.lang.index') }}"><em class="icon ni ni-globe"></em><span>Languages</span></a></li>
-                                    <li><a class="dark-switch" href="#"><em class="icon ni ni-moon"></em><span>Dark Mode</span></a></li>
+                                    <li><a href="{{ route('admin.market-analysis') }}"><em
+                                                class="icon ni ni-bar-c"></em><span>Market Analysis</span></a></li>
+                                    <li><a href="{{ route('admin.lang.index') }}"><em
+                                                class="icon ni ni-globe"></em><span>Languages</span></a></li>
+                                    <li><a class="dark-switch" href="#"><em
+                                                class="icon ni ni-moon"></em><span>Dark Mode</span></a></li>
                                 </ul>
                             </div>
                             <div class="dropdown-inner">
                                 <ul class="link-list">
-                                    <li><a href="#"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
+                                    <li><a href="#"><em class="icon ni ni-signout"></em><span>Sign
+                                                out</span></a></li>
                                 </ul>
                             </div>
                         </div>

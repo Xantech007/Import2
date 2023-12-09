@@ -5,6 +5,7 @@
         <div class="container-xl wide-xl">
             <div class="nk-content-inner">
                 <div class="nk-content-body">
+                    @if ($name == "plan")
                     <div class="nk-block-head nk-block-head-sm">
                         <div class="nk-block-between g-3">
                             <div class="nk-block-head-content">
@@ -32,24 +33,19 @@
                                 <div class="card-head">
                                     <h5 class="card-title">Investment Plan Info</h5>
                                 </div>
-                                <form action="#">
+                                <form action="{{ route('admin.cmp.add.process') }}" method="post">
+                                    @csrf
                                     <div class="row g-4">
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label class="form-label" for="full-name-1">Plan Name</label>
                                                 <div class="form-control-wrap">
-                                                    <input type="text" class="form-control form-control-lg"
+                                                    <input type="text" name="name" class="form-control form-control-lg"
                                                         id="full-name-1" placeholder="Enter plan's name">
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label class="form-label" for="email-address-1">Plan Description</label>
-                                                <div class="form-control-wrap">
-                                                    <input type="text" class="form-control form-control-lg"
-                                                        id="email-address-1" placeholder="Enter plan's description">
-                                                </div>
+                                                @error('name')
+                                                    <strong class="text-danger">{{ $message }}</strong>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
@@ -57,46 +53,61 @@
                                                 <label class="form-label" for="phone-no-1">Daily Interest</label>
                                                 <div class="form-control-wrap">
                                                     <input type="text" class="form-control form-control-lg"
-                                                        id="phone-no-1"
+                                                        id="phone-no-1" name="daily_interest"
                                                         placeholder="Enter plan's daily interest percentage">
                                                 </div>
+                                                @error('daily_interest')
+                                                    <strong class="text-danger">{{ $message }}</strong>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label class="form-label" for="pay-amount-1">Plan Term</label>
                                                 <div class="form-control-wrap">
-                                                    <input type="text" class="form-control form-control-lg"
+                                                    <input type="text" name="tenure" class="form-control form-control-lg"
                                                         id="pay-amount-1" placeholder="Enter plan's term">
                                                 </div>
+                                                @error('tenure')
+                                                    <strong class="text-danger">{{ $message }}</strong>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label class="form-label" for="pay-amount-1">Minimum Deposit</label>
                                                 <div class="form-control-wrap">
-                                                    <input type="text" class="form-control form-control-lg"
+                                                    <input type="text" name="min_deposit" class="form-control form-control-lg"
                                                         id="pay-amount-1" placeholder="Enter plan's min deposit">
                                                 </div>
+                                                @error('min_deposit')
+                                                <strong class="text-danger">{{ $message }}</strong>
+                                            @enderror
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label class="form-label" for="pay-amount-1">Maximum Deposit</label>
                                                 <div class="form-control-wrap">
-                                                    <input type="text" class="form-control form-control-lg"
+                                                    <input type="text" name="max_deposit" class="form-control form-control-lg"
                                                         id="pay-amount-1" placeholder="Enter plan's max deposit">
                                                 </div>
+                                                @error('max_deposit')
+                                                <strong class="text-danger">{{ $message }}</strong>
+                                            @enderror
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label class="form-label" for="pay-amount-1">Total Return</label>
                                                 <div class="form-control-wrap">
-                                                    <input type="text" class="form-control form-control-lg"
+                                                    <input type="text" name="total_return" class="form-control form-control-lg"
                                                         id="pay-amount-1"
                                                         placeholder="Enter plan's total return percentage">
                                                 </div>
+                                                @error('tenure')
+                                                <strong class="text-danger">{{ $message }}</strong>
+                                            @enderror
                                             </div>
                                         </div>
                                         <div class="col-12">
@@ -109,6 +120,7 @@
                             </div>
                         </div>
                     </div><!-- .nk-block -->
+                    @else
                     <div class="nk-block nk-block-lg">
                         <div class="nk-block-head">
                             <div class="nk-block-between g-3">
@@ -137,33 +149,55 @@
                                     <div class="card-head">
                                         <h5 class="card-title">Cryptocurrency Info</h5>
                                     </div>
-                                    <form action="#">
+                                    <form action="{{ route('admin.cmp.add.crypto') }}" method="post" enctype="multipart/form-data">
+                                        @csrf
                                         <div class="row g-4">
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label class="form-label" for="full-name-1">Crypto Name</label>
                                                     <div class="form-control-wrap">
-                                                        <input type="text" class="form-control form-control-lg"
+                                                        <input type="text" name="name" class="form-control form-control-lg"
                                                             id="full-name-1" placeholder="Enter crypto's name">
                                                     </div>
+                                                    @error('name')
+                                                    <strong class="text-danger">{{ $message }}</strong>
+                                                @enderror
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label class="form-label" for="email-address-1">Crypto Abbr</label>
                                                     <div class="form-control-wrap">
-                                                        <input type="text" class="form-control form-control-lg"
+                                                        <input type="text" name="abbr" class="form-control form-control-lg"
                                                             id="email-address-1" placeholder="Enter crypto's abbr">
                                                     </div>
+                                                    @error('abbr')
+                                                    <strong class="text-danger">{{ $message }}</strong>
+                                                @enderror
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label class="form-label" for="phone-no-1">Crypto Value</label>
                                                     <div class="form-control-wrap">
-                                                        <input type="text" class="form-control form-control-lg"
+                                                        <input type="text" name="value" class="form-control form-control-lg"
                                                             id="phone-no-1" placeholder="Enter crypto's value">
                                                     </div>
+                                                    @error('value')
+                                                    <strong class="text-danger">{{ $message }}</strong>
+                                                @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label class="form-label" for="phone-no-1">Crypto Address</label>
+                                                    <div class="form-control-wrap">
+                                                        <input type="text" name="address" class="form-control form-control-lg"
+                                                            id="phone-no-1" placeholder="Enter crypto's value">
+                                                    </div>
+                                                    @error('address')
+                                                    <strong class="text-danger">{{ $message }}</strong>
+                                                @enderror
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
@@ -171,10 +205,13 @@
                                                     <label class="form-label" for="customFileLabel">Crypto Image</label>
                                                     <div class="form-control-wrap">
                                                         <div class="form-file">
-                                                            <input type="file" class="form-control form-control-lg"
+                                                            <input type="file" name="img" class="form-control form-control-lg"
                                                                 id="customFile">
                                                         </div>
                                                     </div>
+                                                    @error('img')
+                                                    <strong class="text-danger">{{ $message }}</strong>
+                                                @enderror
                                                 </div>
                                             </div>
                                             <div class="col-12">
@@ -188,7 +225,8 @@
                                 </div>
                             </div>
                         </div><!-- .nk-block -->
-                    </div><!-- .nk-block -->
+                    </div><!-- .nk-block -->  
+                    @endif
                 </div>
             </div>
         </div>

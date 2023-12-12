@@ -262,32 +262,34 @@
                             </form>
                         </div><!-- .tab-pane -->
                         <div class="tab-pane" id="security">
+                            <form action="{{ route('customer.profile.change-password') }}" method="POST" id="change-password">
+                                @csrf
                             <div class="row gy-4">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="form-label" for="address-l1">Password</label>
-                                        <input type="text" class="form-control form-control-lg" id="address-l1"
-                                            value="2337 Kildeer Drive">
+                                        <input type="text" name="current_password" class="form-control form-control-lg" id="address-l1"
+                                            value="">
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="form-label" for="address-l2">New Password</label>
-                                        <input type="text" class="form-control form-control-lg" id="address-l2"
+                                        <input type="text" name="password" class="form-control form-control-lg" id="address-l2"
                                             value="">
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="form-label" for="address-st">Confirm New Password</label>
-                                        <input type="text" class="form-control form-control-lg" id="address-st"
-                                            value="Kentucky">
+                                        <input type="text" name="password_confirmation" class="form-control form-control-lg" id="address-st"
+                                        >
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <ul class="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
                                         <li>
-                                            <a href="#" class="btn btn-lg btn-primary">Update Password</a>
+                                            <button type="submit" class="btn btn-lg btn-primary">Update Password</button>
                                         </li>
                                         <li>
                                             <a href="#" data-bs-dismiss="modal" class="link link-light">Cancel</a>
@@ -295,6 +297,7 @@
                                     </ul>
                                 </div>
                             </div>
+                            </form>
                         </div><!-- .tab-pane -->
                     </div><!-- .tab-content -->
                 </div><!-- .modal-body -->
@@ -304,6 +307,7 @@
 @endsection
 @push('script')
     {!! $validator->selector('#update-form') !!}
+    {!! $validator2->selector('#change-password') !!}
 
     
     <script>
@@ -360,7 +364,7 @@
         });
         $(document).ready(function() {
 
-            $('#update-profile').on('submit', function(e) {
+            $('#change-password').on('submit', function(e) {
 
                 e.preventDefault();
 

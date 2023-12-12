@@ -17,7 +17,7 @@
                                 </div><!-- .nk-block-head-content -->
                                 <div class="nk-block-head-content">
                                     <ul class="nk-block-tools gx-3">
-                                        <li><a href="#" class="btn btn-primary"><span>Withdraw</span> <em
+                                        <li><a href="{{ route('customer.withdraw.index') }}" class="btn btn-primary"><span>Withdraw</span> <em
                                                     class="icon ni ni-arrow-long-right d-none d-sm-inline-block"></em></a>
                                         </li>
                                         <li><a href="{{ route('customer.mining-plans.index') }}"

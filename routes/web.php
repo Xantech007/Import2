@@ -54,6 +54,7 @@ Route::prefix('/account')->name('customer.')->middleware(['auth', 'verified'])->
     Route::prefix('/profile')->name('profile.')->group(function () {
         Route::get('/', [ProfileController::class, 'index'])->name('index');
         Route::post('/data-update', [ProfileController::class, 'update'])->name('update');
+        Route::post('/change-password', [ProfileController::class, 'change_password'])->name('change-password');
     });
     Route::prefix('/deposit')->name('deposit.')->group(function () {
         Route::get('/', [DepositController::class, 'index'])->name('index');

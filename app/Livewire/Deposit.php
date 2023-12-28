@@ -83,6 +83,7 @@ class Deposit extends Component
                 'value' => $this->amount * $crypto->value,
                 'address' => $this->address,
                 'tranx_type' => 'deposit',
+                'abbr' => $crypto->abbr,
                 'proof' => $path,
             );
 
@@ -96,7 +97,7 @@ class Deposit extends Component
             session()->put('crypto', $this->crypto);
             //   $this->reset();
             //   $this->currentStep = 1;
-            return redirect()->route('customer.deposit.success');
+            return redirect()->route('customer.deposit.crypto-deposit.success');
         }
     }
 

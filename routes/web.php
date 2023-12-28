@@ -58,7 +58,15 @@ Route::prefix('/account')->name('customer.')->middleware(['auth', 'verified'])->
     });
     Route::prefix('/deposit')->name('deposit.')->group(function () {
         Route::get('/', [DepositController::class, 'index'])->name('index');
-        Route::get('/success', [DepositController::class, 'success'])->name('success');
+        Route::prefix('/card-deposit')->name('card-deposit.')->group(function () {
+            Route::get('/', [DepositController::class, 'cash_index'])->name('index');
+            Route::post('/', [DepositController::class, 'cash_process'])->name('process');
+            Route::get('/success', [DepositController::class, 'cash_success'])->name('success');
+        });
+        Route::prefix('/crypto-deposit')->name('crypto-deposit.')->group(function () {
+            Route::get('/', [DepositController::class, 'crypto_index'])->name('index');
+            Route::get('/success', [DepositController::class, 'crypto_success'])->name('success');
+        });
     });
     Route::prefix('/withdraw')->name('withdraw.')->group(function () {
         Route::get('/', [WithdrawController::class, 'index'])->name('index');
